@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlaySavings : MonoBehaviour
 {
-
-    private SaveMovement _save;
+    [SerializeField]
+    public int number;
+    
     private Movement _movement;
     [SerializeField]
     private bool _replay = false;
@@ -13,11 +14,20 @@ public class PlaySavings : MonoBehaviour
 
     private int currentJump=0;
     private int currentRotate=0;
-
+    [SerializeField]
+    private List<SaveMovement.Tupel> _rotation = new List<SaveMovement.Tupel>();
+    private List<SaveMovement.Tupel> _jump = new List<SaveMovement.Tupel>();
 
     private void Awake()
     {
-        _save = GetComponent<SaveMovement>();
+        if (SaveFile.saveMovementsJump.Count > number)
+        {
+            _jump = new List<SaveMovement.Tupel>(SaveFile.saveMovementsJump[number]);
+        }
+        if (SaveFile.saveMovementsRotate.Count > number)
+        {
+            _rotation = new List<SaveMovement.Tupel>(SaveFile.saveMovementsRotate[number]);
+        }
         _movement = GetComponent<Movement>();
     }
 
@@ -29,14 +39,14 @@ public class PlaySavings : MonoBehaviour
         if (_replay)
         {
             _clock += Time.deltaTime;
-            if(currentJump < _save.Jump.Count && _save.Jump[currentJump].Time <= _clock)
+            if(currentJump < _jump.Count && _jump[currentJump].Time <= _clock)
             {
-                _movement.Jump(_save.Jump[currentJump].Value);
+                _movement.Jump(_jump[currentJump].Value);
                 currentJump++;
             }
-            if (currentRotate < _save.Rotation.Count && _save.Rotation[currentJump].Time <= _clock)
+            if (currentRotate < _rotation.Count && _rotation[currentRotate].Time <= _clock)
             {
-                _movement.Rotate(_save.Rotation[currentJump].Value);
+                transform.localRotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, _rotation[currentRotate].Value);
                 currentRotate++;
             }
         }
