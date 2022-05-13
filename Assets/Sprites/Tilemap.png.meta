@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e8509d179e9f4354da003c3eaf2c926b
 TextureImporter:
   internalIDToNameTable:
@@ -62,6 +63,11 @@ TextureImporter:
   - first:
       213: 1891231212010660227
     second: Tilemap_19
+=======
+guid: b41012a04b1bf874684b850d9394b7a1
+TextureImporter:
+  internalIDToNameTable: []
+>>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -84,6 +90,10 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+<<<<<<< HEAD
+=======
+  ignoreMasterTextureLimit: 0
+>>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -92,21 +102,35 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
     filterMode: 0
     aniso: -1
     mipBias: -100
+=======
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+>>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
     wrapU: 1
     wrapV: 1
     wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   spritePixelsToUnits: 16
+=======
+  spritePixelsToUnits: 100
+>>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,6 +159,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -606,6 +631,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
     outline: []
     physicsShape: []
     bones: []
@@ -616,6 +646,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< HEAD
+=======
+    nameFileIdTable: {}
+>>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
