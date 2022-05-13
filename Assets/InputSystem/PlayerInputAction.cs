@@ -41,6 +41,14 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""998bf4bd-9284-4629-a04d-2bd0efc57e51"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -109,6 +117,28 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                     ""action"": ""RotateControler"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""658d6206-98f4-4c94-b072-5469e5dd0bb6"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""129ac5e0-7b86-43b7-be79-99cfb8b9a542"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +173,7 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_RotateControler = m_Player.FindAction("RotateControler", throwIfNotFound: true);
+        m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -195,6 +226,7 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_RotateControler;
+    private readonly InputAction m_Player_Restart;
     public struct PlayerActions
     {
         private @PlayerInputAction m_Wrapper;
@@ -202,6 +234,7 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @RotateControler => m_Wrapper.m_Player_RotateControler;
+        public InputAction @Restart => m_Wrapper.m_Player_Restart;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -220,6 +253,9 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                 @RotateControler.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateControler;
                 @RotateControler.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateControler;
                 @RotateControler.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateControler;
+                @Restart.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -233,6 +269,9 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                 @RotateControler.started += instance.OnRotateControler;
                 @RotateControler.performed += instance.OnRotateControler;
                 @RotateControler.canceled += instance.OnRotateControler;
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
             }
         }
     }
@@ -260,5 +299,6 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnRotateControler(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
     }
 }
