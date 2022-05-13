@@ -15,6 +15,8 @@ public class CollisionCheck : MonoBehaviour
 
     private ReplayAfterTime _replay;
 
+    public bool IsDead=false;
+
     private Movement _movement;
 
     private bool _inGoal=false;
@@ -31,13 +33,13 @@ public class CollisionCheck : MonoBehaviour
 
         if (frograycastHit2D.Length > 1)
         {
+            IsDead = true;
             _movement.CanMove = false;
-            _replay.ReloadSceneNoSave();
         }
 
         
 
-        if(!_inGoal && Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, goal))
+        if(!_inGoal && !_movement.IsJumping && Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, goal))
         {
             _inGoal = true;
             _movement.CanMove = false;
@@ -45,6 +47,11 @@ public class CollisionCheck : MonoBehaviour
         }
     }
 
+    public void RestartGame()
+    {
+        
+        _replay.ReloadSceneNoSave();
+    }
 
     private void OnDrawGizmos()
     {

@@ -28,6 +28,7 @@ MonoBehaviour:
   number: 0
   _replay: 1
   _rotation: []
+  IsHolding: 0
 --- !u!1001 &3001763443704522404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35,6 +36,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2428013702924839419, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1937837106920953396, guid: 1d3b0276ee34252468c1e4b70c776071, type: 3}
+    - target: {fileID: 3351408295541873762, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 028579530898a554cbc04112692c8322, type: 2}
     - target: {fileID: 5921512256699161365, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
       propertyPath: m_RootOrder
       value: 0

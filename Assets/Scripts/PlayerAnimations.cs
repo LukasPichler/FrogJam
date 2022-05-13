@@ -12,8 +12,12 @@ public class PlayerAnimations : MonoBehaviour
 
     private PlaySavings _playSavings;
 
+    private CollisionCheck _collisionCheck;
+    
+
     private void Awake()
     {
+        _collisionCheck = GetComponent<CollisionCheck>();
         _playSavings = GetComponent<PlaySavings>();
         _playerInput = GetComponent<PlayerInputMovement>();
         _movement = GetComponent<Movement>();
@@ -31,5 +35,15 @@ public class PlayerAnimations : MonoBehaviour
         {
             _animator.SetBool("IsHolding", _playSavings.IsHolding);
         }
+        _animator.SetBool("IsDead", _collisionCheck.IsDead);
+        if (_collisionCheck.IsDead)
+        {
+            float time = _animator.GetCurrentAnimatorStateInfo(0).length;
+            
+        }
+        
+
     }
+
+   
 }

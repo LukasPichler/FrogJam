@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
   - {fileID: -1706084216362820205, guid: e8509d179e9f4354da003c3eaf2c926b, type: 3}
-  - {fileID: 6908732097058694728, guid: e8509d179e9f4354da003c3eaf2c926b, type: 3}
-  - {fileID: 3775355368486569077, guid: e8509d179e9f4354da003c3eaf2c926b, type: 3}
-  - {fileID: -9127936476011297880, guid: e8509d179e9f4354da003c3eaf2c926b, type: 3}
+  - {fileID: -9081831216945995436, guid: e8509d179e9f4354da003c3eaf2c926b, type: 3}
+  - {fileID: -762470507989373169, guid: e8509d179e9f4354da003c3eaf2c926b, type: 3}
+  - {fileID: -1706084216362820205, guid: e8509d179e9f4354da003c3eaf2c926b, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
