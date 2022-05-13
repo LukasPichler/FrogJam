@@ -19,6 +19,8 @@ public class ReplayAfterTime : MonoBehaviour
     public UnityEvent _restartGame;
 
 
+    private int _frogsInGoal = 0;
+
     private void Awake()
     {
         PlayerInputAction _playerInputAction = new PlayerInputAction();
@@ -71,6 +73,15 @@ public class ReplayAfterTime : MonoBehaviour
     {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void FrogInGoal()
+    {
+        _frogsInGoal++;
+        if(_frogsInGoal > SaveFile.currentPlayer)
+        {
+            ReloadSceneSaved();
+        }
     }
 
     public void ReloadSceneDeleteSaves(InputAction.CallbackContext context)

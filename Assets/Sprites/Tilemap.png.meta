@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: e8509d179e9f4354da003c3eaf2c926b
 TextureImporter:
   internalIDToNameTable:
@@ -63,11 +62,12 @@ TextureImporter:
   - first:
       213: 1891231212010660227
     second: Tilemap_19
-=======
-guid: b41012a04b1bf874684b850d9394b7a1
-TextureImporter:
-  internalIDToNameTable: []
->>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
+  - first:
+      213: -5705126628185277251
+    second: Tilemap_20
+  - first:
+      213: 7930762206783342680
+    second: Tilemap_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -90,10 +90,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-<<<<<<< HEAD
-=======
-  ignoreMasterTextureLimit: 0
->>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -102,35 +98,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
     filterMode: 0
     aniso: -1
     mipBias: -100
-=======
-    filterMode: 1
-    aniso: 1
-    mipBias: 0
->>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spritePixelsToUnits: 16
-=======
-  spritePixelsToUnits: 100
->>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -145,27 +127,26 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -177,7 +158,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -189,7 +170,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -201,7 +182,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -299,8 +280,8 @@ TextureImporter:
       name: Tilemap_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 64
+        y: 144
         width: 16
         height: 16
       alignment: 0
@@ -320,7 +301,7 @@ TextureImporter:
       name: Tilemap_5
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 128
         width: 16
         height: 16
@@ -341,7 +322,7 @@ TextureImporter:
       name: Tilemap_6
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 128
         width: 16
         height: 16
@@ -362,7 +343,7 @@ TextureImporter:
       name: Tilemap_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 128
         width: 16
         height: 16
@@ -383,8 +364,8 @@ TextureImporter:
       name: Tilemap_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 112
+        x: 48
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -404,8 +385,8 @@ TextureImporter:
       name: Tilemap_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 112
+        x: 64
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -425,7 +406,7 @@ TextureImporter:
       name: Tilemap_10
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 112
         width: 16
         height: 16
@@ -446,7 +427,7 @@ TextureImporter:
       name: Tilemap_11
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 112
         width: 16
         height: 16
@@ -467,8 +448,8 @@ TextureImporter:
       name: Tilemap_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 32
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -488,8 +469,8 @@ TextureImporter:
       name: Tilemap_13
       rect:
         serializedVersion: 2
-        x: 16
-        y: 96
+        x: 48
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -509,7 +490,7 @@ TextureImporter:
       name: Tilemap_14
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 96
         width: 16
         height: 16
@@ -530,7 +511,7 @@ TextureImporter:
       name: Tilemap_15
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 96
         width: 16
         height: 16
@@ -551,8 +532,8 @@ TextureImporter:
       name: Tilemap_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
+        x: 32
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -572,8 +553,8 @@ TextureImporter:
       name: Tilemap_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 80
+        x: 48
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -593,7 +574,7 @@ TextureImporter:
       name: Tilemap_18
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 80
         width: 16
         height: 16
@@ -614,7 +595,7 @@ TextureImporter:
       name: Tilemap_19
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 80
         width: 16
         height: 16
@@ -631,11 +612,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-=======
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
->>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
+    - serializedVersion: 2
+      name: Tilemap_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcf4680f8153d0b0800000000000000
+      internalID: -5705126628185277251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8580a65453abf0e60800000000000000
+      internalID: 7930762206783342680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -646,10 +664,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< HEAD
-=======
-    nameFileIdTable: {}
->>>>>>> 764406a9ce85840c047abf5b7c8b8ad6eeec640a
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

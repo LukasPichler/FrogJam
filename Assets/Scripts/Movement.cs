@@ -31,6 +31,8 @@ public class Movement : MonoBehaviour
 
     private SaveMovement _save;
 
+    public bool CanMove=true;
+
     private bool _isJumping = false;
 
     public bool IsJumping
@@ -67,15 +69,18 @@ public class Movement : MonoBehaviour
 
     public void Rotate(float direction)
     {
-        _save.AddRotation(new SaveMovement.Tupel(_clock, transform.eulerAngles.z));
-        transform.RotateAround(transform.position, Vector3.back, _rotationSpeed * Time.deltaTime * direction);
+        if (CanMove)
+        {
+            _save.AddRotation(new SaveMovement.Tupel(_clock, transform.eulerAngles.z));
+            transform.RotateAround(transform.position, Vector3.back, _rotationSpeed * Time.deltaTime * direction);
+        }
     }
 
    
 
     public void Jump(float holdTime)
     {
-        if (!_isJumping)
+        if (!_isJumping && CanMove)
         {
             
             _save.AddJump(new SaveMovement.Tupel(_clock, holdTime));

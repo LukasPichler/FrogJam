@@ -15,9 +15,13 @@ public class CollisionCheck : MonoBehaviour
 
     private ReplayAfterTime _replay;
 
+    private Movement _movement;
+
+    private bool _inGoal=false;
 
     private void Awake()
     {
+        _movement = GetComponent<Movement>();
         _replay = GameObject.Find("Timer").GetComponent<ReplayAfterTime>();
     }
 
@@ -27,14 +31,17 @@ public class CollisionCheck : MonoBehaviour
 
         if (frograycastHit2D.Length > 1)
         {
+            _movement.CanMove = false;
             _replay.ReloadSceneNoSave();
         }
 
         
 
-        if(Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, goal))
+        if(!_inGoal && Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, goal))
         {
-            _replay.ReloadSceneSaved();
+            _inGoal = true;
+            _movement.CanMove = false;
+            _replay.FrogInGoal();
         }
     }
 
