@@ -5,6 +5,7 @@ using System;
 
 public class SaveMovement : MonoBehaviour
 {
+
     [Serializable]
     public class Tupel
     {
@@ -33,6 +34,7 @@ public class SaveMovement : MonoBehaviour
     {
         get { return _jump; }
     }
+
 
 
     public void AddJump(Tupel jump)

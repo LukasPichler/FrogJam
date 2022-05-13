@@ -67,7 +67,7 @@ public class Movement : MonoBehaviour
 
     public void Rotate(float direction)
     {
-        _save.AddRotation(new SaveMovement.Tupel(_clock, direction));
+        _save.AddRotation(new SaveMovement.Tupel(_clock, transform.eulerAngles.z));
         transform.RotateAround(transform.position, Vector3.back, _rotationSpeed * Time.deltaTime * direction);
     }
 
