@@ -22,6 +22,18 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float _timeToTravelToPoint=0.5f;
 
+    [SerializeField]
+    private Vector2 _boundingMax;
+
+
+    [SerializeField]
+    private Vector2 _boundingMin;
+
+    public float TimeToTravelToPoint
+    {
+        get { return _timeToTravelToPoint; }
+    }
+
     private float _clock = 0f;
 
     private float _clockJump = 0f;
@@ -30,6 +42,8 @@ public class Movement : MonoBehaviour
     private Vector2 _pointToTravle;
 
     private SaveMovement _save;
+
+    public bool CanMove=true;
 
     private bool _isJumping = false;
 
@@ -67,15 +81,18 @@ public class Movement : MonoBehaviour
 
     public void Rotate(float direction)
     {
-        _save.AddRotation(new SaveMovement.Tupel(_clock, transform.eulerAngles.z));
-        transform.RotateAround(transform.position, Vector3.back, _rotationSpeed * Time.deltaTime * direction);
+        if (CanMove)
+        {
+            _save.AddRotation(new SaveMovement.Tupel(_clock, transform.eulerAngles.z));
+            transform.RotateAround(transform.position, Vector3.back, _rotationSpeed * Time.deltaTime * direction);
+        }
     }
 
    
 
     public void Jump(float holdTime)
     {
-        if (!_isJumping)
+        if (!_isJumping && CanMove)
         {
             
             _save.AddJump(new SaveMovement.Tupel(_clock, holdTime));
@@ -85,6 +102,7 @@ public class Movement : MonoBehaviour
 
             _clockJump = 0f;
             _pointToTravle = holdTime* transform.up + transform.position;
+            _pointToTravle = new Vector2(Mathf.Clamp(_pointToTravle.x, _boundingMin.x, _boundingMax.x), Mathf.Clamp(_pointToTravle.y, _boundingMin.y, _boundingMax.y));
             _currentPos = transform.position;
         }
     }

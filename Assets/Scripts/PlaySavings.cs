@@ -18,6 +18,8 @@ public class PlaySavings : MonoBehaviour
     private List<SaveMovement.Tupel> _rotation = new List<SaveMovement.Tupel>();
     private List<SaveMovement.Tupel> _jump = new List<SaveMovement.Tupel>();
 
+    public bool IsHolding = false;
+
     private void Awake()
     {
         if (SaveFile.saveMovementsJump.Count > number)
@@ -39,6 +41,15 @@ public class PlaySavings : MonoBehaviour
         if (_replay)
         {
             _clock += Time.deltaTime;
+            if(currentJump < _jump.Count && _jump[currentJump].Time - _jump[currentJump].Value <= _clock)
+            {
+                IsHolding = true;
+            }
+            else
+            {
+                IsHolding = false;
+            }
+
             if(currentJump < _jump.Count && _jump[currentJump].Time <= _clock)
             {
                 _movement.Jump(_jump[currentJump].Value);

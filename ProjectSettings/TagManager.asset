@@ -13,8 +13,8 @@ TagManager:
   - UI
   - Player
   - Goal
-  - 
-  - 
+  - Ground
+  - Ai
   - 
   - 
   - 
@@ -44,6 +44,15 @@ TagManager:
   - name: OverBackground
     uniqueID: 1680506219
     locked: 0
+  - name: Deko
+    uniqueID: 2179408403
+    locked: 0
+  - name: Obsticales
+    uniqueID: 1939450371
+    locked: 0
   - name: Player
     uniqueID: 1398212969
+    locked: 0
+  - name: Forground
+    uniqueID: 3443826573
     locked: 0

@@ -28,6 +28,7 @@ MonoBehaviour:
   number: 0
   _replay: 1
   _rotation: []
+  IsHolding: 0
 --- !u!1001 &3001763443704522404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35,9 +36,113 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2428013702924839419, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1937837106920953396, guid: 1d3b0276ee34252468c1e4b70c776071, type: 3}
+    - target: {fileID: 3351408295541873762, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 028579530898a554cbc04112692c8322, type: 2}
+    - target: {fileID: 4060646261539936958, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230128237645405103, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: otherFrogs.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230128237645405103, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: CheckForWaterDeath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].time
+      value: 0.4779796
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].value
+      value: 1.4825882
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].inSlope
+      value: 1.0096418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].inSlope
+      value: 0.042589754
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].inSlope
+      value: -0.92446226
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].outSlope
+      value: 1.0096418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].outSlope
+      value: 0.042589754
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].outSlope
+      value: -0.92446226
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 5921512256699161365, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921512256699161365, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921512256699161365, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5921512256699161365, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -83,6 +188,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogReplay Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5921512256699161370, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921512257641679030, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6652669678630792242, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
       propertyPath: _isSaving
       value: 0
@@ -91,7 +204,6 @@ PrefabInstance:
     - {fileID: 5921512256699161364, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
     - {fileID: 5921512256699161367, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
     - {fileID: 7180310713134588856, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
-    - {fileID: 5230128237645405103, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
 --- !u!1 &8900546577730256318 stripped
 GameObject:
