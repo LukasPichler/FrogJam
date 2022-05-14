@@ -22198,6 +22198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 2277249559914578034, guid: 86af667b7152eed4b83e1f2b0c6b3e90, type: 3}
+      propertyPath: _numberOfDucks
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2277249559914578035, guid: 86af667b7152eed4b83e1f2b0c6b3e90, type: 3}
       propertyPath: m_RootOrder
       value: 2

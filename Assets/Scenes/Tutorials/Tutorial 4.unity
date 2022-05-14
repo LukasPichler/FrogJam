@@ -22015,6 +22015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 2277249559914578034, guid: 86af667b7152eed4b83e1f2b0c6b3e90, type: 3}
+      propertyPath: _numberOfDucks
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2277249559914578035, guid: 86af667b7152eed4b83e1f2b0c6b3e90, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -22070,7 +22074,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1820353457, guid: 30d7963547a07844e8ae66815de70b82, type: 3}
       propertyPath: m_text
-      value: Get All the Frogs to the other side
+      value: 'Bring all Frogs
+
+        to the other side'
       objectReference: {fileID: 0}
     - target: {fileID: 2018272149, guid: 30d7963547a07844e8ae66815de70b82, type: 3}
       propertyPath: tutorialTuple.Array.size
@@ -22078,11 +22084,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2018272149, guid: 30d7963547a07844e8ae66815de70b82, type: 3}
       propertyPath: tutorialTuple.Array.data[0].Text
-      value: Get All the Frogs to the other side
+      value: Bring All the Frogs to the other side
       objectReference: {fileID: 0}
     - target: {fileID: 2018272149, guid: 30d7963547a07844e8ae66815de70b82, type: 3}
       propertyPath: tutorialTuple.Array.data[1].Text
-      value: They remeber how you moved them last time
+      value: They remember how you moved them last time
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018272149, guid: 30d7963547a07844e8ae66815de70b82, type: 3}
+      propertyPath: tutorialTuple.Array.data[1].TimeShowingText
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2018272149, guid: 30d7963547a07844e8ae66815de70b82, type: 3}
       propertyPath: tutorialTuple.Array.data[1].SizeOfTalkingBuble.x

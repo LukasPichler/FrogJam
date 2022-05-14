@@ -31,7 +31,7 @@ public class ReplayAfterTime : MonoBehaviour
     [SerializeField]
     private float _minDesolv;
     
-
+    [SerializeField]
     private int _numberOfDucks = 4;
 
     private float _clock = 0f;
@@ -91,13 +91,13 @@ public class ReplayAfterTime : MonoBehaviour
             _restartGame.Invoke();
         }
         SaveFile.currentPlayer++;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Loader.Load(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ReloadSceneNoSave()
     {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Loader.Load(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void FrogInGoal()
@@ -106,17 +106,24 @@ public class ReplayAfterTime : MonoBehaviour
 
         if(_frogsInGoal >= _numberOfDucks)
         {
-            Debug.Log("Win");
-        }
+            LoadNextLevel();
+        }else
         if(_frogsInGoal > SaveFile.currentPlayer)
         {
             ReloadSceneSaved();
         }
     }
 
+    private void LoadNextLevel()
+    {
+        SaveFile.DeleteInput();
+        int scene = SceneManager.GetActiveScene().buildIndex + 1;
+        Loader.Load(scene);
+    }
+
     public void ReloadSceneDeleteSaves(InputAction.CallbackContext context)
     {
         SaveFile.DeleteInput();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Loader.Load(SceneManager.GetActiveScene().buildIndex);
     }
 }
