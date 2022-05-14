@@ -12,7 +12,7 @@ public class PlayerSounds : MonoBehaviour
     [SerializeField]
     private List<AudioClip> _jumpingSounds = new List<AudioClip>();
     [SerializeField]
-    private float _minVolumeJumping=0.5f;
+    private float _minVolumeJumping = 0.5f;
     [SerializeField]
     private float _maxVolumeJumping = 1f;
     [SerializeField]
@@ -72,20 +72,20 @@ public class PlayerSounds : MonoBehaviour
 
     private void PlayJumpingSound()
     {
-        _audioSource.clip = _jumpingSounds[Random.Range(0,_jumpingSounds.Count)];
-        _audioSource.volume = Random.Range(_minVolumeJumping,_maxVolumeJumping);
+        _audioSource.clip = _jumpingSounds[Random.Range(0, _jumpingSounds.Count)];
+        _audioSource.volume = Random.Range(_minVolumeJumping, _maxVolumeJumping);
         if (_isOtherFrog)
         {
             _audioSource.volume *= _otherFrogVolumeScale;
         }
-        _audioSource.pitch = Random.Range(_minPitchJumping,_maxPitchJumping);
+        _audioSource.pitch = Random.Range(_minPitchJumping, _maxPitchJumping);
         _audioSource.Play();
     }
 
     private void PlayWaterJumpSound()
     {
         _audioSource.clip = _waterJump[Random.Range(0, _waterJump.Count)];
-        _audioSource.volume = Random.Range(_maxPitchWater, _maxVolumeWater);
+        _audioSource.volume = Random.Range(_minVolumeWater, _maxVolumeWater);
         if (_isOtherFrog)
         {
             _audioSource.volume *= _otherFrogVolumeScale;

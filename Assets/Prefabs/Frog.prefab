@@ -343,14 +343,14 @@ MonoBehaviour:
   _maxPitchJumping: 1.4
   _waterJump:
   - {fileID: 8300000, guid: 609c45fa165390249acf42b653bae2f6, type: 3}
-  _minVolumeWater: 0.5
-  _maxVolumeWater: 1
+  _minVolumeWater: 0.3
+  _maxVolumeWater: 0.4
   _minPitchWater: 0.7
   _maxPitchWater: 1
   _poison:
   - {fileID: 8300000, guid: cbdde6c9581f48e4283f97e0ad2c3f0e, type: 3}
   _minVolumePoison: 0.5
-  _maxVolumePoison: 1
+  _maxVolumePoison: 0.7
   _minPitchPoison: 0.7
   _maxPitchPoison: 1
 --- !u!82 &3143629298616227181
