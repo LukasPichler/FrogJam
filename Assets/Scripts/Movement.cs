@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Movement : MonoBehaviour
 {
 
-    private UnityEvent _startJumping = new UnityEvent();
+    private UnityEvent _startJumping;
     
 
     [SerializeField]
@@ -121,10 +121,18 @@ public class Movement : MonoBehaviour
 
     public void SubsribeToStartJumping(UnityAction call)
     {
+        if (_startJumping == null)
+        {
+            _startJumping = new UnityEvent();
+        }
         _startJumping.AddListener(call);
     }
     public void DeSubsribeToStartJumping(UnityAction call)
     {
+        if (_startJumping == null)
+        {
+            _startJumping = new UnityEvent();
+        }
         _startJumping.RemoveListener(call);
     }
 }
