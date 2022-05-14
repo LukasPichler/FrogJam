@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 349c1104dde96d14082ade9f493947df
+  - enabled: 1
     path: Assets/Scenes/LukasTestScene.unity
     guid: 860d48d34dba3f14e8990631e3795334
   - enabled: 1
+    path: Assets/Scenes/ScoreBoard.unity
+    guid: 1da32569e0048374d90fa13ba3f1fd86
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
