@@ -12,7 +12,25 @@ public class ReplayAfterTime : MonoBehaviour
     private float _timeUntilReplay=10f;
 
     [SerializeField]
-    private TextMeshProUGUI _textMesh;
+    private Transform _fire;
+
+    [SerializeField]
+    private Transform _moveFireFrom;
+
+    [SerializeField]
+    private Transform _moveFireTo;
+
+    [SerializeField]
+    private SpriteRenderer _sprite;
+    
+    private Material _desolver;
+
+    [SerializeField]
+    private float _maxDesolv;
+
+    [SerializeField]
+    private float _minDesolv;
+    
 
     private int _numberOfDucks = 4;
 
@@ -26,6 +44,7 @@ public class ReplayAfterTime : MonoBehaviour
     private void Awake()
     {
         PlayerInputAction _playerInputAction = new PlayerInputAction();
+        _desolver = _sprite.material;
         _playerInputAction.Player.Enable();
         _playerInputAction.Player.Restart.started += ReloadSceneDeleteSaves;
     }
@@ -44,6 +63,11 @@ public class ReplayAfterTime : MonoBehaviour
     {
 
         _clock += Time.deltaTime;
+        float desolvValue = Mathf.Lerp(_maxDesolv,_minDesolv, _clock / _timeUntilReplay);
+        
+        _desolver.SetFloat("_Fade",desolvValue);
+
+        _fire.position = Vector3.Lerp(_moveFireFrom.position, _moveFireTo.position, _clock / _timeUntilReplay);
 
 
 
@@ -52,7 +76,6 @@ public class ReplayAfterTime : MonoBehaviour
     private void FixedUpdate()
     {
         int currentTime = Mathf.Max(0, (int)(_timeUntilReplay - _clock));
-        _textMesh.text = "Time:" + currentTime + "s";
         if(currentTime == 0)
         {
             ReloadSceneNoSave();

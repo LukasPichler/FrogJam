@@ -7,6 +7,9 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField]
     private AnimationCurve _scaleWhileJumping;
 
+    [SerializeField]
+    private SpriteRenderer _spriteRenderer;
+
     private Animator _animator;
 
     private Movement _movement;
@@ -19,7 +22,8 @@ public class PlayerAnimations : MonoBehaviour
     
 
     private float _clock = 0f;
-    
+
+    private int _defaultSortingLayer;
 
     private void Awake()
     {
@@ -28,6 +32,7 @@ public class PlayerAnimations : MonoBehaviour
         _playerInput = GetComponent<PlayerInputMovement>();
         _movement = GetComponent<Movement>();
         _animator = GetComponent<Animator>();
+        _defaultSortingLayer = _spriteRenderer.sortingOrder;
     }
 
     // Update is called once per frame
@@ -50,14 +55,18 @@ public class PlayerAnimations : MonoBehaviour
         }
 
 
+
         if (_movement.IsJumping)
         {
             _clock += Time.deltaTime;
             float scale = _scaleWhileJumping.Evaluate(_clock/_movement.TimeToTravelToPoint);
+            _spriteRenderer.sortingOrder = _defaultSortingLayer+5;
             transform.localScale = new Vector3(scale, scale, transform.localScale.z);
         }
         else
         {
+
+            _spriteRenderer.sortingOrder = _defaultSortingLayer;
             transform.localScale = Vector3.one;
             _clock = 0f;
         }

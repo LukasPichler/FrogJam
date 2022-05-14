@@ -44,13 +44,20 @@ public class CollisionCheck : MonoBehaviour
     {
         if (!IsDead)
         {
-            if (Physics2D.CircleCast(transform.position, _radiusBad, Vector3.forward, Mathf.Infinity, otherFrogs))
+            RaycastHit2D hit = Physics2D.CircleCast(transform.position, _radiusBad, Vector3.forward, Mathf.Infinity, otherFrogs);
+            if (hit)
             {
-                if (_poision != null)
+                bool otherFrogJump = hit.transform.gameObject.GetComponent<Movement>().IsJumping;
+                if ((otherFrogJump && _movement.IsJumping) || (!otherFrogJump && !_movement.IsJumping))
                 {
-                    _poision.Invoke();
+                    if (_poision != null)
+                    {
+                        _poision.Invoke();
+                    }
+                    Death();
                 }
-                Death();
+
+                
             }
 
 

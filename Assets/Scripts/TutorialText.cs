@@ -9,12 +9,19 @@ public class TutorialText : MonoBehaviour
 {
     [SerializeField]
     private TextMeshPro textMesh;
+    [SerializeField]
+    private GameObject _textBox;
+
+    [SerializeField]
+    private SpriteRenderer _spriteOfTalkingBuble;
 
     private float _clock = 0f;
 
     [Serializable]
     private class TutorialTuple
     {
+
+        public Vector2 SizeOfTalkingBuble;
         public float TimeShowingText;
         public string Text;
     }
@@ -33,17 +40,24 @@ public class TutorialText : MonoBehaviour
 
         if (currentTuple >= tutorialTuple.Count)
         {
-            Debug.Log("Disable Text");
+            _textBox.SetActive(false);
         }
         else
         {
             _clock += Time.deltaTime;
-            if (_clock >= tutorialTuple[currentTuple].TimeShowingText)
+            if ( _clock >= tutorialTuple[currentTuple].TimeShowingText)
             {
                 _clock = 0f;
                 currentTuple++;
+                if (currentTuple < tutorialTuple.Count)
+                {
+                    _spriteOfTalkingBuble.size = tutorialTuple[currentTuple].SizeOfTalkingBuble;
+                }
             }
-            textMesh.text = tutorialTuple[currentTuple].Text;
+            if(currentTuple < tutorialTuple.Count)
+            {
+                textMesh.text = tutorialTuple[currentTuple].Text;
+            }
         }
     }
 }
