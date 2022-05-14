@@ -93,13 +93,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5921512256699161365}
   - component: {fileID: 1943492067858217417}
+  - component: {fileID: 3351408295541873762}
   - component: {fileID: 5921512256699161367}
   - component: {fileID: 5921512256699161364}
   - component: {fileID: 2746972975668778844}
   - component: {fileID: 6652669678630792242}
   - component: {fileID: 7180310713134588856}
   - component: {fileID: 5230128237645405103}
-  - component: {fileID: 3351408295541873762}
   - component: {fileID: 5535812323363906960}
   m_Layer: 6
   m_Name: Frog
@@ -139,6 +139,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!95 &3351408295541873762
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5921512256699161370}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2b9342c2cb39334286e12bd14b1fb0b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5921512256699161367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +219,8 @@ MonoBehaviour:
   _maxJump: 10
   _minDistanceToJumpPoint: 0.1
   _timeToTravelToPoint: 2
+  _boundingMax: {x: 8.42, y: 4.7}
+  _boundingMin: {x: -8.73, y: -4.3}
   CanMove: 1
 --- !u!114 &6652669678630792242
 MonoBehaviour:
@@ -243,30 +264,16 @@ MonoBehaviour:
   _radiusGood: 0.52
   otherFrogs:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 512
   goal:
     serializedVersion: 2
     m_Bits: 128
+  ground:
+    serializedVersion: 2
+    m_Bits: 256
   IsDead: 0
---- !u!95 &3351408295541873762
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5921512256699161370}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f2b9342c2cb39334286e12bd14b1fb0b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  IsInWater: 0
+  CheckForWaterDeath: 1
 --- !u!114 &5535812323363906960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +286,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415644211ac3a7b4f814502477941710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scaleWhileJumping:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.6766797
+      outSlope: 0.6766797
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5002866
+      value: 1.3385338
+      inSlope: -0.00038805604
+      outSlope: -0.00038805604
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.6774558
+      outSlope: -0.6774558
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5921512257641679030
 GameObject:
   m_ObjectHideFlags: 0

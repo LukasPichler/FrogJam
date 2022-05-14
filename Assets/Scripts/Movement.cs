@@ -22,6 +22,18 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float _timeToTravelToPoint=0.5f;
 
+    [SerializeField]
+    private Vector2 _boundingMax;
+
+
+    [SerializeField]
+    private Vector2 _boundingMin;
+
+    public float TimeToTravelToPoint
+    {
+        get { return _timeToTravelToPoint; }
+    }
+
     private float _clock = 0f;
 
     private float _clockJump = 0f;
@@ -90,6 +102,7 @@ public class Movement : MonoBehaviour
 
             _clockJump = 0f;
             _pointToTravle = holdTime* transform.up + transform.position;
+            _pointToTravle = new Vector2(Mathf.Clamp(_pointToTravle.x, _boundingMin.x, _boundingMax.x), Mathf.Clamp(_pointToTravle.y, _boundingMin.y, _boundingMax.y));
             _currentPos = transform.position;
         }
     }

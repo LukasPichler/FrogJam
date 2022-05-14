@@ -13,9 +13,16 @@ public class CollisionCheck : MonoBehaviour
     [SerializeField]
     private LayerMask goal;
 
+    [SerializeField]
+    private LayerMask ground;
+
     private ReplayAfterTime _replay;
 
     public bool IsDead=false;
+
+    public bool IsInWater = false;
+
+    public bool CheckForWaterDeath = false;
 
     private Movement _movement;
 
@@ -29,12 +36,10 @@ public class CollisionCheck : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RaycastHit2D[] frograycastHit2D = Physics2D.CircleCastAll(transform.position, _radiusBad, Vector3.forward, Mathf.Infinity, otherFrogs);
 
-        if (frograycastHit2D.Length > 1)
+        if (Physics2D.CircleCast(transform.position, _radiusBad, Vector3.forward, Mathf.Infinity, otherFrogs))
         {
-            IsDead = true;
-            _movement.CanMove = false;
+            Death();
         }
 
         
@@ -45,6 +50,18 @@ public class CollisionCheck : MonoBehaviour
             _movement.CanMove = false;
             _replay.FrogInGoal();
         }
+
+        if(CheckForWaterDeath && !_movement.IsJumping && !Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, ground))
+        {
+            IsInWater = true;
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        IsDead = true;
+        _movement.CanMove = false;
     }
 
     public void RestartGame()

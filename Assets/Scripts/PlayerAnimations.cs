@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
+    [SerializeField]
+    private AnimationCurve _scaleWhileJumping;
+
     private Animator _animator;
 
     private Movement _movement;
@@ -13,6 +16,8 @@ public class PlayerAnimations : MonoBehaviour
     private PlaySavings _playSavings;
 
     private CollisionCheck _collisionCheck;
+
+    private float _clock = 0f;
     
 
     private void Awake()
@@ -28,6 +33,7 @@ public class PlayerAnimations : MonoBehaviour
     void Update()
     {
         _animator.SetBool("IsJumping",_movement.IsJumping);
+        _animator.SetBool("IsInWater", _collisionCheck.IsInWater);
         if (_playerInput != null)
         {
             _animator.SetBool("IsHolding", _playerInput.IsHolding);
@@ -41,7 +47,19 @@ public class PlayerAnimations : MonoBehaviour
             float time = _animator.GetCurrentAnimatorStateInfo(0).length;
             
         }
-        
+
+
+        if (_movement.IsJumping)
+        {
+            _clock += Time.deltaTime;
+            float scale = _scaleWhileJumping.Evaluate(_clock/_movement.TimeToTravelToPoint);
+            transform.localScale = new Vector3(scale, scale, transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
+            _clock = 0f;
+        }
 
     }
 

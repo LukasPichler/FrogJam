@@ -13,7 +13,9 @@ public class ReplayAfterTime : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI _textMesh;
-    
+
+    private int _numberOfDucks = 4;
+
     private float _clock = 0f;
 
     public UnityEvent _restartGame;
@@ -78,6 +80,11 @@ public class ReplayAfterTime : MonoBehaviour
     public void FrogInGoal()
     {
         _frogsInGoal++;
+
+        if(_frogsInGoal >= _numberOfDucks)
+        {
+            Debug.Log("Win");
+        }
         if(_frogsInGoal > SaveFile.currentPlayer)
         {
             ReloadSceneSaved();

@@ -44,9 +44,105 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 028579530898a554cbc04112692c8322, type: 2}
+    - target: {fileID: 4060646261539936958, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230128237645405103, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: otherFrogs.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230128237645405103, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: CheckForWaterDeath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].time
+      value: 0.4779796
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].value
+      value: 1.4825882
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].inSlope
+      value: 1.0096418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].inSlope
+      value: 0.042589754
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].inSlope
+      value: -0.92446226
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].outSlope
+      value: 1.0096418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].outSlope
+      value: 0.042589754
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].outSlope
+      value: -0.92446226
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: _scaleWhileJumping.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 5921512256699161365, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921512256699161365, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921512256699161365, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5921512256699161365, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -91,6 +187,14 @@ PrefabInstance:
     - target: {fileID: 5921512256699161370, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
       propertyPath: m_Name
       value: FrogReplay Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921512256699161370, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921512257641679030, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6652669678630792242, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
       propertyPath: _isSaving
