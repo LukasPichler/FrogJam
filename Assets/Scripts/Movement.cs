@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Movement : MonoBehaviour
 {
+
+    private UnityEvent _startJumping = new UnityEvent();
+    
+
     [SerializeField]
     private float _rotationSpeed = 20f;
 
@@ -52,13 +57,17 @@ public class Movement : MonoBehaviour
         get { return _isJumping; }
     }
 
+    
+
     private void Awake()
     {
+       
         _save = GetComponent<SaveMovement>();
     }
 
     private void Start()
     {
+       
         _currentPos = transform.position;
         _pointToTravle = transform.position;
     }
@@ -94,7 +103,10 @@ public class Movement : MonoBehaviour
     {
         if (!_isJumping && CanMove)
         {
-            
+            if (_startJumping != null)
+            {
+                _startJumping.Invoke();
+            }
             _save.AddJump(new SaveMovement.Tupel(_clock, holdTime));
 
             holdTime = holdTime * _jumpMultiplier;
@@ -105,5 +117,14 @@ public class Movement : MonoBehaviour
             _pointToTravle = new Vector2(Mathf.Clamp(_pointToTravle.x, _boundingMin.x, _boundingMax.x), Mathf.Clamp(_pointToTravle.y, _boundingMin.y, _boundingMax.y));
             _currentPos = transform.position;
         }
+    }
+
+    public void SubsribeToStartJumping(UnityAction call)
+    {
+        _startJumping.AddListener(call);
+    }
+    public void DeSubsribeToStartJumping(UnityAction call)
+    {
+        _startJumping.RemoveListener(call);
     }
 }

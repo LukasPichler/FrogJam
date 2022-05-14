@@ -16,6 +16,7 @@ public class PlayerAnimations : MonoBehaviour
     private PlaySavings _playSavings;
 
     private CollisionCheck _collisionCheck;
+    
 
     private float _clock = 0f;
     
