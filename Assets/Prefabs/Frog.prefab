@@ -216,11 +216,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 120
-  _jumpMultiplier: 10
+  _jumpMultiplier: 1
   _minJump: 0.5
-  _maxJump: 10
+  _maxJump: 3
   _minDistanceToJumpPoint: 0.1
-  _timeToTravelToPoint: 2
+  _timeToTravelToPoint: 0.75
   _boundingMax: {x: 8.42, y: 4.7}
   _boundingMin: {x: -8.73, y: -4.3}
   CanMove: 1
