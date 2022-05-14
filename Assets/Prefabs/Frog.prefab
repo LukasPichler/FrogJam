@@ -333,12 +333,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20dfb2e610a2ce94db1db5613e732831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isOtherFrog: 0
+  _otherFrogVolumeScale: 0.5
   _jumpingSounds:
   - {fileID: 8300000, guid: 7bab0efd040b9524a84ad1fd0c802fd3, type: 3}
   _minVolumeJumping: 0.7
   _maxVolumeJumping: 1
   _minPitchJumping: 0.7
   _maxPitchJumping: 1.4
+  _waterJump:
+  - {fileID: 8300000, guid: 609c45fa165390249acf42b653bae2f6, type: 3}
+  _minVolumeWater: 0.5
+  _maxVolumeWater: 1
+  _minPitchWater: 0.7
+  _maxPitchWater: 1
+  _poison:
+  - {fileID: 8300000, guid: cbdde6c9581f48e4283f97e0ad2c3f0e, type: 3}
+  _minVolumePoison: 0.5
+  _maxVolumePoison: 1
+  _minPitchPoison: 0.7
+  _maxPitchPoison: 1
 --- !u!82 &3143629298616227181
 AudioSource:
   m_ObjectHideFlags: 0

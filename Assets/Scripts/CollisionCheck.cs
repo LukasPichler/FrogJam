@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CollisionCheck : MonoBehaviour
 {
+
+
+    private UnityEvent _landingInWater;
+    private UnityEvent _poision;
+
     [SerializeField]
     private float _radiusBad;
     [SerializeField]
@@ -36,25 +42,35 @@ public class CollisionCheck : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        if (Physics2D.CircleCast(transform.position, _radiusBad, Vector3.forward, Mathf.Infinity, otherFrogs))
+        if (!IsDead)
         {
-            Death();
-        }
+            if (Physics2D.CircleCast(transform.position, _radiusBad, Vector3.forward, Mathf.Infinity, otherFrogs))
+            {
+                if (_poision != null)
+                {
+                    _poision.Invoke();
+                }
+                Death();
+            }
 
-        
 
-        if(!_inGoal && !_movement.IsJumping && Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, goal))
-        {
-            _inGoal = true;
-            _movement.CanMove = false;
-            _replay.FrogInGoal();
-        }
 
-        if(CheckForWaterDeath && !_movement.IsJumping && !Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, ground))
-        {
-            IsInWater = true;
-            Death();
+            if (!_inGoal && !_movement.IsJumping && Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, goal))
+            {
+                _inGoal = true;
+                _movement.CanMove = false;
+                _replay.FrogInGoal();
+            }
+
+            if (CheckForWaterDeath && !_movement.IsJumping && !Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, ground))
+            {
+                if (_landingInWater != null)
+                {
+                    _landingInWater.Invoke();
+                }
+                IsInWater = true;
+                Death();
+            }
         }
     }
 
@@ -68,6 +84,44 @@ public class CollisionCheck : MonoBehaviour
     {
         
         _replay.ReloadSceneNoSave();
+    }
+
+    public void SubscribeToLandingInWater(UnityAction call)
+    {
+        if (_landingInWater == null)
+        {
+            _landingInWater = new UnityEvent();
+        }
+        _landingInWater.AddListener(call);
+    }
+
+    public void DeSubscribeToLandingInWater(UnityAction call)
+    {
+        if (_landingInWater == null)
+        {
+            _landingInWater = new UnityEvent();
+        }
+        _landingInWater.RemoveListener(call);
+    }
+
+
+
+    public void SubscribeToPoison(UnityAction call)
+    {
+        if (_poision == null)
+        {
+            _poision = new UnityEvent();
+        }
+        _poision.AddListener(call);
+    }
+
+    public void DeSubscribeToPoison(UnityAction call)
+    {
+        if (_poision == null)
+        {
+            _poision = new UnityEvent();
+        }
+        _poision.RemoveListener(call);
     }
 
     private void OnDrawGizmos()
