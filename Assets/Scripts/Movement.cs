@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 {
 
     private UnityEvent _startJumping;
-    
+
 
     [SerializeField]
     private float _rotationSpeed = 20f;
@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
     private float _minDistanceToJumpPoint = 0.1f;
 
     [SerializeField]
-    private float _timeToTravelToPoint=0.5f;
+    private float _timeToTravelToPoint = 0.5f;
 
     [SerializeField]
     private Vector2 _boundingMax;
@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
 
     private SaveMovement _save;
 
-    public bool CanMove=true;
+    public bool CanMove = true;
 
     private bool _isJumping = false;
 
@@ -57,17 +57,16 @@ public class Movement : MonoBehaviour
         get { return _isJumping; }
     }
 
-    
+
 
     private void Awake()
     {
-       
+
         _save = GetComponent<SaveMovement>();
     }
 
     private void Start()
     {
-       
         _currentPos = transform.position;
         _pointToTravle = transform.position;
     }
@@ -81,10 +80,10 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_isJumping)
+        if (_isJumping)
         {
             _clockJump += Time.deltaTime;
-            transform.position = Vector2.Lerp(_currentPos, _pointToTravle,_clockJump/_timeToTravelToPoint);
+            transform.position = Vector2.Lerp(_currentPos, _pointToTravle, _clockJump / _timeToTravelToPoint);
         }
     }
 
@@ -97,7 +96,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-   
+
 
     public void Jump(float holdTime)
     {
@@ -109,11 +108,17 @@ public class Movement : MonoBehaviour
             }
             _save.AddJump(new SaveMovement.Tupel(_clock, holdTime));
 
-            holdTime = holdTime * _jumpMultiplier;
+            var _x_0_1 = Mathf.Clamp(holdTime, 0, 1);
+            var _x_inf = holdTime + 2 * Mathf.Epsilon;
+
+            var _base_func = _x_inf + 1 / 3 * _x_inf * _x_inf * _x_inf;
+            var _offset = -2 * _x_0_1 * _x_0_1 * (_x_0_1 - 2);
+
+            holdTime = (_base_func + _offset) * _jumpMultiplier;
             holdTime = Mathf.Clamp(holdTime, _minJump, _maxJump);
 
             _clockJump = 0f;
-            _pointToTravle = holdTime* transform.up + transform.position;
+            _pointToTravle = holdTime * transform.up + transform.position;
             _pointToTravle = new Vector2(Mathf.Clamp(_pointToTravle.x, _boundingMin.x, _boundingMax.x), Mathf.Clamp(_pointToTravle.y, _boundingMin.y, _boundingMax.y));
             _currentPos = transform.position;
         }
