@@ -27,7 +27,7 @@ public class ReplayAfterTime : MonoBehaviour
     {
         PlayerInputAction _playerInputAction = new PlayerInputAction();
         _playerInputAction.Player.Enable();
-        _playerInputAction.Player.Restart.performed += ReloadSceneDeleteSaves;
+        _playerInputAction.Player.Restart.started += ReloadSceneDeleteSaves;
     }
 
     // Start is called before the first frame update

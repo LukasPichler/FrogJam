@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radiusBad: 0.3
-  _radiusGood: 0.52
+  _radiusGood: 0.35
   otherFrogs:
     serializedVersion: 2
     m_Bits: 512
