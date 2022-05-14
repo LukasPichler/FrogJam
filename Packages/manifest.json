@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.lootlocker.lootlockersdk": "file:C:/Users/laura/Downloads/unity-sdk-main/unity-sdk-main",
+    "com.lootlocker.lootlockersdk": "file:C:/Users/User/Downloads/unity-sdk-main",
     "com.unity.2d.animation": "5.0.3",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.psdimporter": "4.0.2",
@@ -15,6 +15,7 @@
     "com.unity.ide.vscode": "1.2.3",
     "com.unity.inputsystem": "1.0.2",
     "com.unity.postprocessing": "3.1.1",
+    "com.unity.render-pipelines.universal": "11.0.0",
     "com.unity.test-framework": "1.1.22",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.5.2",
