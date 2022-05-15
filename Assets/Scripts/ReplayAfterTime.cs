@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ReplayAfterTime : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class ReplayAfterTime : MonoBehaviour
     private Transform _moveFireTo;
 
     [SerializeField]
-    private SpriteRenderer _sprite;
+    private Image _sprite;
     
     private Material _desolver;
 
@@ -146,7 +147,7 @@ public class ReplayAfterTime : MonoBehaviour
         }
         if (!_inTutorial)
         {
-            CalculateScore.CalculateNewScore((int)(_timeUntilReplay - _clock));
+            CalculateScore.CalculateNewScore((_timeUntilReplay - _clock));
         }
         yield return new WaitForSeconds(1f);
         Loader.Load(scene);
