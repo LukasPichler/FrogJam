@@ -105,7 +105,7 @@ public class ReplayAfterTime : MonoBehaviour
     public void ReloadSceneNoSave()
     {
 
-        Loader.Load(SceneManager.GetActiveScene().buildIndex);
+        Loader.LoadFast(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void FrogInGoal()
@@ -137,7 +137,7 @@ public class ReplayAfterTime : MonoBehaviour
     public void ReloadSceneDeleteSaves(InputAction.CallbackContext context)
     {
         SaveFile.DeleteInput();
-        Loader.Load(SceneManager.GetActiveScene().buildIndex);
+        Loader.LoadFast(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void SubscribeToWon(UnityAction call)

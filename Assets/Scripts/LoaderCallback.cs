@@ -6,6 +6,9 @@ public class LoaderCallback : MonoBehaviour
 {
     private bool _first = true;
 
+    [SerializeField]
+    private float _timeWaiting=3f;
+
     // Update is called once per frame
     void Update()
     {
@@ -19,7 +22,7 @@ public class LoaderCallback : MonoBehaviour
 
     private IEnumerator WaitForCallback()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(_timeWaiting);
         Loader.LoaderCallback();
     }
 }

@@ -7,6 +7,7 @@ public class PlattformGoingUnderWater : MonoBehaviour
 
     private Animator _animator;
 
+    [SerializeField]
     private bool isUnderWater = false;
 
     [SerializeField]
@@ -14,6 +15,9 @@ public class PlattformGoingUnderWater : MonoBehaviour
 
     [SerializeField]
     private float _timeOverWater = 2f;
+
+    [SerializeField]
+    private float _startDelay = 0f;
 
     private float _clock=0f;
 
@@ -23,6 +27,8 @@ public class PlattformGoingUnderWater : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _clock -= _startDelay;
+        _animator.SetBool("GoUnderWater", isUnderWater);
     }
 
     // Update is called once per frame

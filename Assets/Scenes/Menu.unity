@@ -511,6 +511,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b6545e880762af84cb6716965079b1f2, type: 2}
+  _sliderMaster: {fileID: 844943381}
+  _sliderMusic: {fileID: 1155120384}
+  _sliderEffects: {fileID: 2025974054}
 --- !u!1 &273399881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,10 +2044,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 985894039}
   m_HandleRect: {fileID: 1206358373}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3137,10 +3140,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1042279602}
   m_HandleRect: {fileID: 1128533037}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4933,10 +4936,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 948924393}
   m_HandleRect: {fileID: 474886641}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
