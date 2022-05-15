@@ -45,9 +45,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015124559, y: 0.01008302}
+  m_Offset: {x: -0.015124559, y: 0.016710639}
   serializedVersion: 2
-  m_Radius: 0.59578866
+  m_Radius: 0.5538131
 --- !u!1 &6777756143041554450
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab96832af0580014fa5202fa56f5da79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUnderWater: 0
   _timeUnderWater: 2
   _timeOverWater: 4
+  _startDelay: 0
   _collider: {fileID: 6777756142795696541}

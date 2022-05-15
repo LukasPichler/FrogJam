@@ -18,6 +18,16 @@ public static class Loader
         SceneManager.LoadScene("LoadingScene");
     }
 
+    public static void LoadFast(int index)
+    {
+
+        onLoaderCallback = () =>
+        {
+            SceneManager.LoadScene(index);
+        };
+        SceneManager.LoadScene("LoadingSceneFast");
+    }
+
     public static void Load(string name)
     {
         onLoaderCallback = () =>
