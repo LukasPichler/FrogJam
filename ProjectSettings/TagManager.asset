@@ -15,8 +15,8 @@ TagManager:
   - Goal
   - Ground
   - Ai
-  - 
-  - 
+  - MovingGround
+  - RotatingGround
   - 
   - 
   - 

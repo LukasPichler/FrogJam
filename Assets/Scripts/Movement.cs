@@ -44,12 +44,13 @@ public class Movement : MonoBehaviour
     private float _clockJump = 0f;
 
     private Vector2 _currentPos;
-    private Vector2 _pointToTravle;
+    public Vector2 _pointToTravle;
 
     private SaveMovement _save;
+    
 
     public bool CanMove = true;
-
+    
     private bool _isJumping = false;
 
     public bool IsJumping
@@ -73,6 +74,7 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+
         _isJumping = ((Vector2)transform.position - _pointToTravle).magnitude - _minDistanceToJumpPoint > 0;
         _clock += Time.deltaTime;
 

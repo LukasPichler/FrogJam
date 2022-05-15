@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: CheckForWaterDeath
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5230128237645405103, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
+      propertyPath: movingPlatform.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 5535812323363906960, guid: 569ed80497a639143bc39301daffe1a0, type: 3}
       propertyPath: _scaleWhileJumping.m_Curve.Array.size
       value: 3
