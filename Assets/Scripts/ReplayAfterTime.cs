@@ -46,6 +46,8 @@ public class ReplayAfterTime : MonoBehaviour
 
     private int _frogsInGoal = 0;
 
+    private bool _calcTime = true;
+
     private PlayerInputAction _playerInputAction;
     private void Awake()
     {
@@ -73,8 +75,11 @@ public class ReplayAfterTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_calcTime)
+        {
+            _clock += Time.deltaTime;
+        }
 
-        _clock += Time.deltaTime;
         float desolvValue = Mathf.Lerp(_maxDesolv,_minDesolv, _clock / _timeUntilReplay);
         
         _desolver.SetFloat("_Fade",desolvValue);
@@ -138,6 +143,7 @@ public class ReplayAfterTime : MonoBehaviour
 
     private IEnumerator LoadNextLevel()
     {
+        _calcTime = false;
         _playerInputAction.Player.Restart.started -= ReloadSceneDeleteSaves;
         SaveFile.DeleteInput();
         int scene = SceneManager.GetActiveScene().buildIndex + 1;
