@@ -15,8 +15,23 @@ public class ReplayAfterTime : MonoBehaviour
     [SerializeField]
     private float _timeUntilReplay=10f;
 
+    public float TimeUntilReplay
+    {
+        get { return _timeUntilReplay; }
+    }
+
+    public float Clock
+    {
+        get { return _clock; }
+    }
+
     [SerializeField]
     private Transform _fire;
+
+    public Transform Fire
+    {
+        get { return _fire; }
+    }
 
     [SerializeField]
     private Transform _moveFireFrom;
@@ -44,11 +59,16 @@ public class ReplayAfterTime : MonoBehaviour
 
     public UnityEvent _wonGame;
 
+    public UnityEvent _reloadUnsaved;
+
     private int _frogsInGoal = 0;
 
     private bool _calcTime = true;
 
     private PlayerInputAction _playerInputAction;
+
+    private bool _callReloadOnce = true;
+
     private void Awake()
     {
         _playerInputAction = new PlayerInputAction();
@@ -84,7 +104,11 @@ public class ReplayAfterTime : MonoBehaviour
         
         _desolver.SetFloat("_Fade",desolvValue);
 
-        _fire.position = Vector3.Lerp(_moveFireFrom.position, _moveFireTo.position, _clock / _timeUntilReplay);
+        if(_clock / _timeUntilReplay < 1f)
+        {
+
+            _fire.position = Vector3.Lerp(_moveFireFrom.position, _moveFireTo.position, _clock / _timeUntilReplay);
+        }
 
 
 
@@ -93,8 +117,9 @@ public class ReplayAfterTime : MonoBehaviour
     private void FixedUpdate()
     {
         int currentTime = Mathf.Max(0, (int)(_timeUntilReplay - _clock));
-        if(currentTime == 0)
+        if(currentTime == 0 && _callReloadOnce)
         {
+            _callReloadOnce = false;
             ReloadSceneNoSave();
         }
         
@@ -124,6 +149,17 @@ public class ReplayAfterTime : MonoBehaviour
         {
             CalculateScore.Death();
         }
+
+        StartCoroutine(ReloadSceneNoSaveWait());
+    }
+
+    private IEnumerator ReloadSceneNoSaveWait()
+    {
+        if (_reloadUnsaved != null)
+        {
+            _reloadUnsaved.Invoke();
+        }
+        yield return new WaitForSeconds(1f);
         Loader.LoadFast(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -167,7 +203,7 @@ public class ReplayAfterTime : MonoBehaviour
 
     public void SubscribeToWon(UnityAction call)
     {
-        if (_wonGame != null)
+        if (_wonGame == null)
         {
             _wonGame = new UnityEvent();
         }
@@ -176,10 +212,29 @@ public class ReplayAfterTime : MonoBehaviour
     public void DeSubscribeToWon(UnityAction call)
     {
 
-        if (_wonGame != null)
+        if (_wonGame == null)
         {
             _wonGame = new UnityEvent();
         }
         _wonGame.RemoveListener(call);
+    }
+
+
+    public void SubscribeToReloadUnsaved(UnityAction call)
+    {
+        if (_reloadUnsaved == null)
+        {
+            _reloadUnsaved = new UnityEvent();
+        }
+        _reloadUnsaved.AddListener(call);
+    }
+
+    public void DeSubscribeToReloadUnsaved(UnityAction call)
+    {
+        if (_reloadUnsaved == null)
+        {
+            _reloadUnsaved = new UnityEvent();
+        }
+        _reloadUnsaved.RemoveListener(call);
     }
 }

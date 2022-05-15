@@ -21445,6 +21445,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6089862135192220637, guid: 86af667b7152eed4b83e1f2b0c6b3e90, type: 3}
+      propertyPath: _burnPoint
+      value: 
+      objectReference: {fileID: 5565985615408325594}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86af667b7152eed4b83e1f2b0c6b3e90, type: 3}
 --- !u!1001 &5565985615408325593
@@ -21544,3 +21548,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d198a92fcb73f24cb878b659c2c89de, type: 3}
+--- !u!224 &5565985615408325594 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3183372271071430715, guid: 4d198a92fcb73f24cb878b659c2c89de, type: 3}
+  m_PrefabInstance: {fileID: 5565985615408325593}
+  m_PrefabAsset: {fileID: 0}
