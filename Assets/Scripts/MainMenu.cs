@@ -6,11 +6,13 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        CalculateScore.Score = 0;
         Loader.Load("LVL001");
     }
     
     public void PlayTutorial()
     {
+        CalculateScore.Score = 0;
         Loader.Load("Tutorial");
     }
     

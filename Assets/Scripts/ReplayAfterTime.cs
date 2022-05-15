@@ -9,6 +9,9 @@ using UnityEngine.InputSystem;
 public class ReplayAfterTime : MonoBehaviour
 {
     [SerializeField]
+    private bool _inTutorial=false;
+
+    [SerializeField]
     private float _timeUntilReplay=10f;
 
     [SerializeField]
@@ -99,12 +102,15 @@ public class ReplayAfterTime : MonoBehaviour
         SaveFile.currentPlayer++;
         yield return new WaitForSeconds(1f);
 
-        Loader.Load(SceneManager.GetActiveScene().buildIndex);
+        Loader.LoadRewind(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ReloadSceneNoSave()
     {
-
+        if (!_inTutorial)
+        {
+            CalculateScore.Death();
+        }
         Loader.LoadFast(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -129,6 +135,10 @@ public class ReplayAfterTime : MonoBehaviour
         if (_wonGame != null)
         {
             _wonGame.Invoke();
+        }
+        if (!_inTutorial)
+        {
+            CalculateScore.CalculateNewScore((int)(_timeUntilReplay - _clock));
         }
         yield return new WaitForSeconds(1f);
         Loader.Load(scene);

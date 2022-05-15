@@ -7,9 +7,13 @@ public static class CalculateScore
     public static int Score = 0;
     
     //time isch di zeit de jemand fürs level gebraucht hot, deaths wie oft jemand des level gstorbm isch
-    public static void CalculateNewScore( int time, int deaths)
+    public static void CalculateNewScore( int time)
     {
         Score += (100 - time);
-        Score -= deaths * 5;
+    }
+
+    public static void Death()
+    {
+        Score -= 5;
     }
 }
