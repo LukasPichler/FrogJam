@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        Loader.Load("LukasTestScene");
+        Loader.Load("LVL001");
     }
     
     public void PlayTutorial()

@@ -93,7 +93,12 @@ public class Movement : MonoBehaviour
     {
         if (CanMove)
         {
-            _save.AddRotation(new SaveMovement.Tupel(_clock, transform.eulerAngles.z));
+            float minus = 0f;
+            if(transform.parent != null)
+            {
+                minus = transform.parent.eulerAngles.z;
+            }
+            _save.AddRotation(new SaveMovement.Tupel(_clock, transform.eulerAngles.z-minus));
             transform.RotateAround(transform.position, Vector3.back, _rotationSpeed * Time.deltaTime * direction);
         }
     }

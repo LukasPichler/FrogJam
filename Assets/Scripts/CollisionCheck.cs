@@ -41,7 +41,7 @@ public class CollisionCheck : MonoBehaviour
     private void Awake()
     {
         _movement = GetComponent<Movement>();
-        _replay = GameObject.Find("Timer").GetComponent<ReplayAfterTime>();
+        _replay = GameObject.Find("Timer")?.GetComponent<ReplayAfterTime>();
         _oldParent = transform.parent;
     }
 
