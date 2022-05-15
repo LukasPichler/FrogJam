@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e8e1b761-00e5-478b-bf91-033c0bd4cf71" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FrogJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FrogJam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ScoreBoard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ScoreBoard.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeaderboardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LeaderboardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/04B_30__ SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/04B_30__ SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652517940920</updated>
       <workItem from="1652517949516" duration="4295000" />
-      <workItem from="1652603980017" duration="986000" />
+      <workItem from="1652603980017" duration="2355000" />
     </task>
     <servers />
   </component>
