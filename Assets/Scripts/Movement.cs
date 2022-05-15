@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
     
 
     public bool CanMove = true;
-
+    
     private bool _isJumping = false;
 
     public bool IsJumping
@@ -74,6 +74,7 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+
         _isJumping = ((Vector2)transform.position - _pointToTravle).magnitude - _minDistanceToJumpPoint > 0;
         _clock += Time.deltaTime;
 

@@ -84,7 +84,7 @@ public class CollisionCheck : MonoBehaviour
                 Death();
             }
             RaycastHit2D hitOfPlatform = Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, movingPlatform);
-            if (hitOfPlatform && _movement.IsJumping)
+            if (hitOfPlatform && !_movement.IsJumping)
             {
                 transform.parent = hitOfPlatform.transform;
                 _movement._pointToTravle = transform.position;

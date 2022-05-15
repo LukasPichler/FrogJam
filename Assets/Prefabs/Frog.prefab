@@ -223,8 +223,7 @@ MonoBehaviour:
   _timeToTravelToPoint: 0.75
   _boundingMax: {x: 8.42, y: 4.7}
   _boundingMin: {x: -8.73, y: -4.3}
-  FollowPlattform: 0
-  plattfrom: {fileID: 0}
+  _pointToTravle: {x: 0, y: 0}
   CanMove: 1
 --- !u!114 &6652669678630792242
 MonoBehaviour:
@@ -274,10 +273,10 @@ MonoBehaviour:
     m_Bits: 128
   movingPlatform:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 3072
   ground:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 3328
   IsDead: 0
   IsInWater: 0
   CheckForWaterDeath: 1
