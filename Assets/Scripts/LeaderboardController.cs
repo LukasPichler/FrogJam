@@ -1,14 +1,16 @@
 using System;
 using UnityEngine;
 using LootLocker.Requests;
+using TMPro;
 using UnityEngine.UI;
 
 public class LeaderboardController : MonoBehaviour
 {
-    public InputField MemberID, PlayerScore;
+    public TMP_InputField MemberID;
+    public TMP_Text PlayerScore;
     public int ID;
-    private int MaxScores = 13;
-    public Text[] Entries;
+    private int MaxScores = 10;
+    public TMP_Text[] Entries;
     private void Start()
     {
         LootLockerSDKManager.StartGuestSession((response) =>
@@ -16,10 +18,10 @@ public class LeaderboardController : MonoBehaviour
             if (!response.success)
             {
                 Debug.Log("error starting LootLocker session"+ response.ToString());
-
+                
                 return;
             }
-
+            ShowScores();
             Debug.Log("successfully started LootLocker session");
         });
     }
@@ -30,6 +32,7 @@ public class LeaderboardController : MonoBehaviour
         {
             if (response.success)
             {
+                Debug.Log("show scores");
                 LootLockerLeaderboardMember[] scores = response.items;
                 for (int i = 0; i < scores.Length; i++)
                 {
@@ -57,6 +60,7 @@ public class LeaderboardController : MonoBehaviour
             if (response.success)
             {
                 Debug.Log("Success");
+                ShowScores();
             }
             else
             {

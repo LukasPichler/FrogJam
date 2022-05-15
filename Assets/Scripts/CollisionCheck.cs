@@ -18,6 +18,8 @@ public class CollisionCheck : MonoBehaviour
     private LayerMask otherFrogs;
     [SerializeField]
     private LayerMask goal;
+    [SerializeField]
+    private LayerMask movingPlatform;
 
     [SerializeField]
     private LayerMask ground;
@@ -34,10 +36,13 @@ public class CollisionCheck : MonoBehaviour
 
     private bool _inGoal=false;
 
+    private Transform _oldParent;
+
     private void Awake()
     {
         _movement = GetComponent<Movement>();
         _replay = GameObject.Find("Timer").GetComponent<ReplayAfterTime>();
+        _oldParent = transform.parent;
     }
 
     private void FixedUpdate()
@@ -77,6 +82,16 @@ public class CollisionCheck : MonoBehaviour
                 }
                 IsInWater = true;
                 Death();
+            }
+            RaycastHit2D hitOfPlatform = Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, movingPlatform);
+            if (hitOfPlatform && _movement.IsJumping)
+            {
+                transform.parent = hitOfPlatform.transform;
+                _movement._pointToTravle = transform.position;
+            }
+            else
+            {
+                transform.parent = _oldParent;
             }
         }
     }
