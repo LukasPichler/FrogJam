@@ -623,6 +623,7 @@ GameObject:
   - component: {fileID: 213611535}
   - component: {fileID: 213611534}
   - component: {fileID: 213611538}
+  - component: {fileID: 213611539}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -729,6 +730,19 @@ MonoBehaviour:
   _sliderMaster: {fileID: 844943381}
   _sliderMusic: {fileID: 1155120384}
   _sliderEffects: {fileID: 2025974054}
+--- !u!114 &213611539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213611533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323c2df40670db542a130296c6ed809a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1737937657}
 --- !u!1 &256240782
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,7 +6159,6 @@ GameObject:
   - component: {fileID: 1737937661}
   - component: {fileID: 1737937660}
   - component: {fileID: 1737937659}
-  - component: {fileID: 1737937662}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -6216,7 +6229,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1737937660}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 213611539}
+        m_TargetAssemblyTypeName: ContinueButton, Assembly-CSharp
+        m_MethodName: GoToCurrentLVL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1737937660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6255,18 +6280,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737937657}
   m_CullTransparentMesh: 1
---- !u!114 &1737937662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737937657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323c2df40670db542a130296c6ed809a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1787779874
 GameObject:
   m_ObjectHideFlags: 0

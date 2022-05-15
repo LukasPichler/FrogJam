@@ -69,6 +69,9 @@ public class ReplayAfterTime : MonoBehaviour
 
     private bool _callReloadOnce = true;
 
+    [SerializeField]
+    private bool _jumpToMenu = false;
+
     private void Awake()
     {
         _playerInputAction = new PlayerInputAction();
@@ -193,7 +196,14 @@ public class ReplayAfterTime : MonoBehaviour
             PlayerPrefs.SetInt("LVL", scene);
         }
         yield return new WaitForSeconds(1f);
-        Loader.Load(scene);
+        if (_jumpToMenu)
+        {
+            Loader.Load("Menu");
+        }
+        else
+        {
+            Loader.Load(scene);
+        }
     }
 
     public void ReloadSceneDeleteSaves(InputAction.CallbackContext context)
