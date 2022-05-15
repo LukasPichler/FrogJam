@@ -45,12 +45,19 @@ public class ReplayAfterTime : MonoBehaviour
 
     private int _frogsInGoal = 0;
 
+    private PlayerInputAction _playerInputAction;
     private void Awake()
     {
-        PlayerInputAction _playerInputAction = new PlayerInputAction();
+        _playerInputAction = new PlayerInputAction();
         _desolver = _sprite.material;
         _playerInputAction.Player.Enable();
         _playerInputAction.Player.Restart.started += ReloadSceneDeleteSaves;
+    }
+
+    private void OnDisable()
+    {
+        _playerInputAction.Player.Restart.started -= ReloadSceneDeleteSaves;
+
     }
 
     // Start is called before the first frame update
@@ -130,6 +137,7 @@ public class ReplayAfterTime : MonoBehaviour
 
     private IEnumerator LoadNextLevel()
     {
+        _playerInputAction.Player.Restart.started -= ReloadSceneDeleteSaves;
         SaveFile.DeleteInput();
         int scene = SceneManager.GetActiveScene().buildIndex + 1;
         if (_wonGame != null)

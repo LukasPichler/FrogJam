@@ -9,11 +9,12 @@ public static class CalculateScore
     //time isch di zeit de jemand fürs level gebraucht hot, deaths wie oft jemand des level gstorbm isch
     public static void CalculateNewScore( int time)
     {
-        Score += (100 - time);
+        Score += (time);
     }
 
     public static void Death()
     {
         Score -= 5;
+        Score = Mathf.Max(0, Score);
     }
 }
