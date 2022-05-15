@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         CalculateScore.Score = 0;
+        PlayerPrefs.DeleteKey("LVL");
         Loader.Load("LVL001");
     }
     

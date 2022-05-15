@@ -49,6 +49,11 @@ public class CollisionCheck : MonoBehaviour
     {
         if (!IsDead)
         {
+            if(_replay?.TimeUntilReplay - _replay?.Clock <= 0)
+            {
+                _movement.CanMove = false;
+            }
+
             RaycastHit2D hit = Physics2D.CircleCast(transform.position, _radiusBad, Vector3.forward, Mathf.Infinity, otherFrogs);
             if (hit)
             {

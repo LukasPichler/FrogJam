@@ -155,7 +155,7 @@ public class ReplayAfterTime : MonoBehaviour
 
     private IEnumerator ReloadSceneNoSaveWait()
     {
-        if (_reloadUnsaved != null)
+        if (_reloadUnsaved != null && Mathf.Max(0, (int)(_timeUntilReplay - _clock))==0)
         {
             _reloadUnsaved.Invoke();
         }
@@ -190,6 +190,7 @@ public class ReplayAfterTime : MonoBehaviour
         if (!_inTutorial)
         {
             CalculateScore.CalculateNewScore((_timeUntilReplay - _clock));
+            PlayerPrefs.SetInt("LVL", scene);
         }
         yield return new WaitForSeconds(1f);
         Loader.Load(scene);
