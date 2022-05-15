@@ -353,7 +353,7 @@ MonoBehaviour:
   _minPitchWater: 0.7
   _maxPitchWater: 1
   _poison:
-  - {fileID: 8300000, guid: cbdde6c9581f48e4283f97e0ad2c3f0e, type: 3}
+  - {fileID: 8300000, guid: ccf14072ae6b13047b04f64fc159f8dd, type: 3}
   _minVolumePoison: 0.5
   _maxVolumePoison: 0.7
   _minPitchPoison: 0.7

@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        SaveFile.DeleteInput();
         Loader.Load("Menu");
     }
 }

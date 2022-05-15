@@ -128,6 +128,7 @@ public class Movement : MonoBehaviour
             _pointToTravle = holdTime * transform.up + transform.position;
             _pointToTravle = new Vector2(Mathf.Clamp(_pointToTravle.x, _boundingMin.x, _boundingMax.x), Mathf.Clamp(_pointToTravle.y, _boundingMin.y, _boundingMax.y));
             _currentPos = transform.position;
+            _isJumping = ((Vector2)transform.position - _pointToTravle).magnitude - _minDistanceToJumpPoint > 0;
         }
     }
 

@@ -95,6 +95,7 @@ public class CollisionCheck : MonoBehaviour
             }
         }
     }
+    
 
     private void Death()
     {
