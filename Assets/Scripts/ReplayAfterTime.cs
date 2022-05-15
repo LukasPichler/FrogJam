@@ -38,6 +38,7 @@ public class ReplayAfterTime : MonoBehaviour
 
     public UnityEvent _restartGame;
 
+    public UnityEvent _wonGame;
 
     private int _frogsInGoal = 0;
 
@@ -86,11 +87,18 @@ public class ReplayAfterTime : MonoBehaviour
 
     public void ReloadSceneSaved()
     {
+        StartCoroutine(WaitBeforeReloadSaved());
+    }
+
+    private IEnumerator WaitBeforeReloadSaved()
+    {
         if (_restartGame != null)
         {
             _restartGame.Invoke();
         }
         SaveFile.currentPlayer++;
+        yield return new WaitForSeconds(1f);
+
         Loader.Load(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -106,7 +114,7 @@ public class ReplayAfterTime : MonoBehaviour
 
         if(_frogsInGoal >= _numberOfDucks)
         {
-            LoadNextLevel();
+            StartCoroutine(LoadNextLevel());
         }else
         if(_frogsInGoal > SaveFile.currentPlayer)
         {
@@ -114,10 +122,15 @@ public class ReplayAfterTime : MonoBehaviour
         }
     }
 
-    private void LoadNextLevel()
+    private IEnumerator LoadNextLevel()
     {
         SaveFile.DeleteInput();
         int scene = SceneManager.GetActiveScene().buildIndex + 1;
+        if (_wonGame != null)
+        {
+            _wonGame.Invoke();
+        }
+        yield return new WaitForSeconds(1f);
         Loader.Load(scene);
     }
 
@@ -125,5 +138,23 @@ public class ReplayAfterTime : MonoBehaviour
     {
         SaveFile.DeleteInput();
         Loader.Load(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void SubscribeToWon(UnityAction call)
+    {
+        if (_wonGame != null)
+        {
+            _wonGame = new UnityEvent();
+        }
+        _wonGame.AddListener(call);
+    }
+    public void DeSubscribeToWon(UnityAction call)
+    {
+
+        if (_wonGame != null)
+        {
+            _wonGame = new UnityEvent();
+        }
+        _wonGame.RemoveListener(call);
     }
 }

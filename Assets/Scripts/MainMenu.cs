@@ -6,12 +6,12 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("LukasTestScene");
+        Loader.Load("LukasTestScene");
     }
     
     public void PlayTutorial()
     {
-        SceneManager.LoadScene("Tutorial");
+        Loader.Load("Tutorial");
     }
     
     public void QuitGame()
@@ -22,6 +22,6 @@ public class MainMenu : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        Loader.Load("Menu");
     }
 }
