@@ -14,9 +14,16 @@ public class AnimateOverCurveScale : MonoBehaviour
 
     private Vector3 baseScale;
 
+    private RectTransform _rectTransform;
+
+    private void Awake()
+    {
+        _rectTransform = GetComponent<RectTransform>();
+    }
+
     private void Start()
     {
-        baseScale = transform.localScale;
+        baseScale = _rectTransform.localScale;
     }
 
     // Update is called once per frame
@@ -27,6 +34,6 @@ public class AnimateOverCurveScale : MonoBehaviour
         {
             _clock = 0f;
         }
-        transform.localScale = baseScale * _curve.Evaluate(_clock/_cicleTime);
+        _rectTransform.localScale = baseScale * _curve.Evaluate(_clock/_cicleTime);
     }
 }

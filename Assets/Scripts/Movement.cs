@@ -93,7 +93,12 @@ public class Movement : MonoBehaviour
     {
         if (CanMove)
         {
-            _save.AddRotation(new SaveMovement.Tupel(_clock, transform.eulerAngles.z));
+            float minus = 0f;
+            if(transform.parent != null)
+            {
+                minus = transform.parent.eulerAngles.z;
+            }
+            _save.AddRotation(new SaveMovement.Tupel(_clock, transform.eulerAngles.z-minus));
             transform.RotateAround(transform.position, Vector3.back, _rotationSpeed * Time.deltaTime * direction);
         }
     }
@@ -123,6 +128,7 @@ public class Movement : MonoBehaviour
             _pointToTravle = holdTime * transform.up + transform.position;
             _pointToTravle = new Vector2(Mathf.Clamp(_pointToTravle.x, _boundingMin.x, _boundingMax.x), Mathf.Clamp(_pointToTravle.y, _boundingMin.y, _boundingMax.y));
             _currentPos = transform.position;
+            _isJumping = ((Vector2)transform.position - _pointToTravle).magnitude - _minDistanceToJumpPoint > 0;
         }
     }
 

@@ -41,11 +41,11 @@ public class CollisionCheck : MonoBehaviour
     private void Awake()
     {
         _movement = GetComponent<Movement>();
-        _replay = GameObject.Find("Timer").GetComponent<ReplayAfterTime>();
+        _replay = GameObject.Find("Timer")?.GetComponent<ReplayAfterTime>();
         _oldParent = transform.parent;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (!IsDead)
         {
@@ -76,12 +76,12 @@ public class CollisionCheck : MonoBehaviour
 
             if (CheckForWaterDeath && !_movement.IsJumping && !Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, ground))
             {
+                IsInWater = true;
+                Death();
                 if (_landingInWater != null)
                 {
                     _landingInWater.Invoke();
                 }
-                IsInWater = true;
-                Death();
             }
             RaycastHit2D hitOfPlatform = Physics2D.CircleCast(transform.position, _radiusGood, Vector3.forward, Mathf.Infinity, movingPlatform);
             if (hitOfPlatform && !_movement.IsJumping)
@@ -95,6 +95,7 @@ public class CollisionCheck : MonoBehaviour
             }
         }
     }
+    
 
     private void Death()
     {

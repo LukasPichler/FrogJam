@@ -55,7 +55,7 @@ public class PlaySavings : MonoBehaviour
                 _movement.Jump(_jump[currentJump].Value);
                 currentJump++;
             }
-            if (currentRotate < _rotation.Count && _rotation[currentRotate].Time <= _clock)
+            if (currentRotate < _rotation.Count && _rotation[currentRotate].Time <= _clock && !_movement.IsJumping)
             {
                 transform.localRotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, _rotation[currentRotate].Value);
                 currentRotate++;

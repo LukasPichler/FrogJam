@@ -6,11 +6,13 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        Loader.Load("LukasTestScene");
+        CalculateScore.Score = 0;
+        Loader.Load("LVL001");
     }
     
     public void PlayTutorial()
     {
+        CalculateScore.Score = 0;
         Loader.Load("Tutorial");
     }
     
@@ -22,6 +24,7 @@ public class MainMenu : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        SaveFile.DeleteInput();
         Loader.Load("Menu");
     }
 }

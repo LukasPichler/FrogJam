@@ -38,6 +38,15 @@ public static class Loader
     }
 
 
+    public static void LoadRewind(int inedx)
+    {
+        onLoaderCallback = () =>
+        {
+            SceneManager.LoadScene(inedx);
+        };
+        SceneManager.LoadScene("LoadingSceneSameScene");
+    }
+
     public static void LoaderCallback()
     {
         if (onLoaderCallback != null)

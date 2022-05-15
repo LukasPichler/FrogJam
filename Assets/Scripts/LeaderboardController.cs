@@ -13,6 +13,8 @@ public class LeaderboardController : MonoBehaviour
     public TMP_Text[] Entries;
     private void Start()
     {
+        PlayerScore.text = CalculateScore.Score+"";
+
         LootLockerSDKManager.StartGuestSession((response) =>
         {
             if (!response.success)
