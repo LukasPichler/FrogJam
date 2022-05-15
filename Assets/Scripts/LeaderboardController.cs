@@ -9,7 +9,7 @@ public class LeaderboardController : MonoBehaviour
     public TMP_InputField MemberID;
     public TMP_Text PlayerScore;
     public int ID;
-    private int MaxScores = 13;
+    private int MaxScores = 10;
     public TMP_Text[] Entries;
     private void Start()
     {
