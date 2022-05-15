@@ -44,9 +44,10 @@ public class Movement : MonoBehaviour
     private float _clockJump = 0f;
 
     private Vector2 _currentPos;
-    private Vector2 _pointToTravle;
+    public Vector2 _pointToTravle;
 
     private SaveMovement _save;
+    
 
     public bool CanMove = true;
 

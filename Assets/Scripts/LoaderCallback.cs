@@ -13,7 +13,13 @@ public class LoaderCallback : MonoBehaviour
         if (_first)
         {
             _first = false;
-            Loader.LoaderCallback();
+            StartCoroutine(WaitForCallback());
         }
+    }
+
+    private IEnumerator WaitForCallback()
+    {
+        yield return new WaitForSeconds(3f);
+        Loader.LoaderCallback();
     }
 }
