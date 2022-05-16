@@ -72,6 +72,9 @@ public class ReplayAfterTime : MonoBehaviour
     [SerializeField]
     private bool _jumpToMenu = false;
 
+    [SerializeField]
+    private bool _IsLastLVL = false;
+
     private void Awake()
     {
         _playerInputAction = new PlayerInputAction();
@@ -193,7 +196,14 @@ public class ReplayAfterTime : MonoBehaviour
         if (!_inTutorial)
         {
             CalculateScore.CalculateNewScore((_timeUntilReplay - _clock));
-            PlayerPrefs.SetInt("LVL", scene);
+            if(!_IsLastLVL)
+            {
+                PlayerPrefs.SetInt("LVL", scene);
+            }
+            else
+            {
+                PlayerPrefs.DeleteKey("LVL");
+            }
         }
         yield return new WaitForSeconds(1f);
         if (_jumpToMenu)
